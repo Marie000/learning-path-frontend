@@ -1,0 +1,38 @@
+brown and blue?
+{
+    "palette": {
+        "primary1Color": "#5d4037",
+        "primary2Color": "#795548",
+        "primary3Color": "#a1887f",
+        "accent1Color": "#03a9f4",
+        "accent3Color": "#a1887f",
+        "canvasColor": "#eeeeee",
+        "pickerHeaderColor": "#00838f"
+    }
+}
+
+blue and orange?
+{
+    "palette": {
+        "primary1Color": "#0288d1",
+        "primary2Color": "#e0e0e0",
+        "primary3Color": "#bdbdbd",
+        "accent1Color": "#ff7043",
+        "accent3Color": "#a1887f",
+        "canvasColor": "#fafafa",
+        "pickerHeaderColor": "#00838f"
+    }
+}
+
+purple and green?
+{
+    "palette": {
+        "primary1Color": "#673ab7",
+        "primary2Color": "#e0e0e0",
+        "primary3Color": "#bdbdbd",
+        "accent1Color": "#8bc34a",
+        "accent3Color": "#a1887f",
+        "canvasColor": "#eeeeee",
+        "pickerHeaderColor": "#00838f"
+    }
+}
