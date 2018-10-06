@@ -10,28 +10,37 @@ const cardStyle = {
 
 const Path = (props) => {
   let path = props.path;
+  path.steps = path.steps || [];
+
   return (
     <div>
-      <Card>
+      <Card expanded={props.creating}>
         <CardTitle style={cardStyle}
                    title={path.title}
                    subtitle={path.description}
                    actAsExpander
-                   showExpandableButton/>
+                   showExpandableButton={!props.creating}/>
         <CardText expandable={true}>
-          <div>Prerequisites: {path.prerequisites}</div>
+          <div>Starting Point: {path.start}</div>
+          <div>Goal: {path.goal}</div>
           <h3>Steps: </h3>
           <Stepper
               linear={false}
               orientation="vertical">
-            {path.steps.map((step, index) => <SingleStep public={props.public} key={step.id} step={step} index={index} />)}
+            {path.steps.map((step, index) => <SingleStep public={props.public} key={index} step={step} index={index} />)}
           </Stepper>
           <br/>
-          {props.public ?
-          <RaisedButton primary={true}
+          {props.public && !props.creating ?
+          <RaisedButton primary
                         label="Choose this path"
                         onClick={props.addPathForUser.bind(this, path)} />
           : null}
+          {props.creating ?
+          null :
+          <RaisedButton label="edit this path"
+                        onClick={props.editPath.bind(this, path.id)} />
+          }
+
         </CardText>
       </Card>
       <br /> <br />

@@ -1,5 +1,6 @@
 import React from 'react';
-import {Paper} from 'material-ui';
+import {Paper, RaisedButton} from 'material-ui';
+import {Link} from 'react-router';
 
 const style = {
   margin: "30px 0",
@@ -7,6 +8,7 @@ const style = {
 }
 
 const UserInfo = ({user}) => {
+  console.log(user)
   if (user) {
     return (
       <Paper style={style}>

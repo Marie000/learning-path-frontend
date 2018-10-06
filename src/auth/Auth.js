@@ -68,7 +68,6 @@ export default class Auth {
     // navigate to the home route
 
     this.lock.getProfile(authResult.accessToken, (error, profile) => {
-      console.log('get profile function', profile);
       if (error) {
         console.log('Error loading the Profile', error);
       } else {
@@ -79,7 +78,6 @@ export default class Auth {
   }
 
   setSession(authResult) {
-    console.log('setSession!')
     // Set the time that the access token will expire at
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);

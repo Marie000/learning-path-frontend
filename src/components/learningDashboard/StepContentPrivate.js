@@ -8,7 +8,7 @@ const StepContentPrivate = ({step}) => {
       <p>{step.description}</p>
       <a href = {step.url}><RaisedButton secondary>Link</RaisedButton></a>
       <br /><br />
-
+      {step.checklist ?
       <div>
         <h5>What you should have learned:</h5>
         <Table>
@@ -17,6 +17,7 @@ const StepContentPrivate = ({step}) => {
           </TableBody>
         </Table>
       </div>
+      : null}
       <div>
         Notes:
         <TextField fullWidth multiLine rows={3} hintText="your general notes on this step" />

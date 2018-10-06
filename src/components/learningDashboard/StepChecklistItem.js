@@ -6,12 +6,12 @@ function StepChecklistItem({item}) {
   return (
     <TableRow>
       <TableRowColumn>
-      <Checkbox label={item} />
+      <Checkbox label={item.question} />
       </TableRowColumn>
 
       <TableRowColumn>
         Notes:
-        <TextField multiLine fullWidth hintText={"notes on " + item} />
+        <TextField multiLine fullWidth hintText={"notes on " + item.question} />
       </TableRowColumn>
 
       <TableRowColumn>

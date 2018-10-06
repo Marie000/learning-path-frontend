@@ -17,15 +17,25 @@ class PathPage extends React.Component {
     browserHistory.push('/path');
   }
 
+  editPath(id) {
+    browserHistory.push('/edit-path/' + id);
+  }
+
   render() {
-    return (
-      <div>
-        <h1>Paths</h1>
-        <PathList paths={this.props.paths}
-                  addPathForUser={this.props.addPathForUser}
-                  public />
-      </div>
-    );
+    if (this.props.paths) {
+      return (
+        <div>
+          <h1>Paths</h1>
+          <PathList paths={this.props.paths.filter((path) => path.public)}
+                    addPathForUser={this.props.addPathForUser}
+                    editPath={this.editPath}
+                    public />
+        </div>
+      );
+    }  else {
+      return <p> Paths loading... </p>
+    }
+
   }
 }
 
